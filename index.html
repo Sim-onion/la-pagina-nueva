@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Página Personal</title>
+    <link rel="stylesheet" href="estilo.css" />
+  </head>
+  <body>
+    <i class="fa-brands fa-github-square"></i>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio </a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      
+      <main>
+        <section id="inicio" class="parallax">
+          <div class="parallax-content">
+            <h1 class="animated-heading">Bienvenidos a mi página personal</h1> <br>
+            <h2>Simón Cano<br>Luna</h2>
+            <p>Desarrollador Web | Designer banner | Escritor</p>
+            <p>Redes redes-sociales</p>
+            <a href="https://www.instagram.com/gohjloop/" target="_blank"><img src='imgs/instagram.png' alt="instagram">https://www.instagram.com/gohjloop/</a> <br>
+            <a href="https://github.com/Sim-onion/Portfolio" target="_blank"><img src="imgs/github.png" alt="github">https://github.com/Sim-onion/Portfolio</a>
+          </div>
+        </section>
+      
+        <section id="parallax1" class="parallax">
+          <div class="parallax-content">
+            <h2 class="animated-heading">Servicios</h2>
+            <p>Servicios de desarrollo web, análisis de datos, diseño gráfico y redacción de contenidos.</p>
+          </div>
+        </section>
+      
+        <section id="parallax2" class="parallax">
+          <div class="parallax-content">
+            <h2 class="animated-heading">Espero te guste</h2>
+            <p>Me gusta mucho el diseño web y el analisis de datos, trabajo mucho con HTML CSS y JS.</p>
+          </div>
+        </section>
+      
+        <section id="sobre-mi">
+          <h2 class="animated-heading">Sobre Mí</h2>
+          <p>
+            Hola, mi nombre es Gohj y soy un apasionado del desarrollo web. <br />
+            Con mi experiencia en estos campos, busco dar a mostar mis habilidades. <br>
+            Soy de Colombia y tengo 18 años
+          </p>
+        </section>
+      
+          g<section id="servicios">
+          <h2 class="animated-heading">Servicios</h2>
+          <ul>
+            <li>Diseño y Desarrollo Web</li>
+            <li>Analisis de datos</li>
+            <li>Diseño Gráfico sencillo</li>
+            <li>Escritor</li>
+          </ul>
+        </section>
+      
+        <section id="contacto">
+          <h2 class="animated-heading">Contacto</h2>
+          <p><br>
+            <a href="https://www.instagram.com/gohjloop/" target="_blank"><img src='imgs/instagram.png' alt="instagram">@gohjloop</a> <br>
+            <a href="https://github.com/Sim-onion/Portfolio" target="_blank"><img src="imgs/github.png" alt="github">https://github.com/Sim-onion/Portfolio</a>
+          </p>
+          <form id="formulario">
+            <label for="nombre">Nombre:</label> <br>
+            <input type="text" id="nombre" name="nombre" required /> <br>
+      
+            <label for="correo">Correo Electrónico:</label> <br>
+            <input type="email" id="correo" name="correo" required /><br>
+      
+            <label for="mensaje">Mensaje:</label> <br>
+            <textarea id="mensaje" name="mensaje" required></textarea><br>
+      
+            <input type="submit" value="Enviar" /> 
+
+          </form>
+        </section>
+      </main>
+      
+    <button class="boton-navegacion"></button><br><button class="boton-navegacion"></button></br>
+
+    <footer>
+      <p>© 2023 Gohjloop. Derechos reservados.</p>
+    </footer>
+
+    <script>
+      const formulario = document.getElementById("formulario");
+      const nombre = document.getElementById("nombre");
+      const correo = document.getElementById("correo");
+      const mensaje = document.getElementById("mensaje");
+      const form = document.querySelector('form');
+      const navLinks = document.querySelectorAll('nav ul li a');
+
+      formulario.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (nombre.value === "") {
+          alert("El campo nombre es requerido");
+          nombre.focus();
+        } else if (correo.value === "") {
+          alert("El campo correo es requerido");
+          correo.focus();
+        } else if (mensaje.value === "") {
+          alert("El campo mensaje es requerido");
+          mensaje.focus();
+        } else {
+          alert("Formulario enviado correctamente");
+          formulario.reset();
+        }
+        const form = document.querySelector('form');
+        
+        form.addEventListener('submit', event => {
+          event.preventDefault();
+          const nombreInput = document.querySelector('#nombre');
+          const correoInput = document.querySelector('#correo');
+          const mensajeInput = document.querySelector('#mensaje');
+          
+          if (!nombreInput.value.trim() || !correoInput.checkValidity() || !mensajeInput.value.trim()) {
+            alert('Por favor, completa correctamente todos los campos.');
+            return;
+          }
+        })
+      })
+        navLinks.forEach(link => {
+        link.addEventListener('click', event => {
+          event.preventDefault();
+          const targetId = link.getAttribute('href').slice(1);
+          const targetElement = document.getElementById(targetId);
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        })
+        })
+        const sections = document.querySelectorAll("section");
+        const config = {
+        rootMargin: "-50px 0px -50px 0px",
+        threshold: 0.5,
+        }
+        const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+          entry.target.classList.add("animate__animated", "animate__fadeInUp");
+          observer.unobserve(entry.target);
+          }
+        })
+        }, config);
+        sections.forEach((section) => {
+        observer.observe(section);
+        })
+        var boton = document.querySelector('.boton-navegacion');
+
+        boton.addEventListener('mouseover', function() {
+        boton.classList.add('boton-navegacion-hover');
+        boton.classList.add('boton-navegacion-animado');
+      })
+
+        boton.addEventListener('mouseout', function() {
+        boton.classList.remove('boton-navegacion-hover');
+        boton.classList.remove('boton-navegacion-animado');
+      });
+    </script>
+  </body>
+</html>
