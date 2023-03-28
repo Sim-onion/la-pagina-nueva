@@ -5,7 +5,7 @@
 
 body {
     color: rgb(214, 207, 207);
-    background-color: #059682da;
+    background-color: #2b3332da;
     margin: 0;
     font-family: "Open Sans", sans-serif;
 }
@@ -60,8 +60,8 @@ nav li {
 }
 
 nav a {
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
     border-radius: 1rem;
     padding: 10px 30px ;
     color: #ffffff;
@@ -88,7 +88,7 @@ nav a:hover {
 }
 section {
     padding: 50px;
-    background: linear-gradient(to bottom, #37f1f1, #454366);
+    background: linear-gradient(to bottom, #3f4141, #000000);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 /*section:hover {
