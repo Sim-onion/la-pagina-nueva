@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Rubik';
+  src: url(Rubik-VariableFont_wght.ttf) format('woff2');
+ }
+
 body {
     color: rgb(214, 207, 207);
     background-color: #059682da;
@@ -14,13 +19,14 @@ header {
 
 
 header, section {
+    font-family: 'Rubik';
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     background-color: #000000;
     border-bottom: 1px solid #f0bdbd;
-    background: linear-gradient(to bottom right, #16b8b0, #f1caca, #16fcd5);
+    background: linear-gradient(to bottom right, #000000, #443f3f, #000000);
 }
 header::before {
     content: "";
@@ -54,25 +60,31 @@ nav li {
 }
 
 nav a {
-    /*transition: color 0.2s ease-in-out;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+    border-radius: 1rem;
+    padding: 10px 30px ;
     color: #ffffff;
-    /*text-decoration: none;
-    font-size: 1.5rem;
+    text-transform: uppercase;
+    /*font-size: 1.5rem;
     border-radius: 5px;
     padding: 10px 20px;
     border-radius: 10px;*/
     transition: all 0.2s ease-in-out;
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 nav a:hover {
     /*color: #ffffff;
     transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
     text-shadow: 2px 2px 2px #080808; ;*/
+    border-radius: 1rem;
+    padding: 10px 30px ;
+    background: linear-gradient(to bottom right, #444343, #443f3f, #4b4b4b);
     transform: rotate(10deg);
     color: #f7f7f7;
-  transform: translateY(-3px);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 section {
     padding: 50px;

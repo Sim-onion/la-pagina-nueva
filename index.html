@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi Página Personal</title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Rubik"/>
     <link rel="stylesheet" href="estilo.css" />
   </head>
   <body>
@@ -53,21 +55,13 @@
           </p>
         </section>
       
-          <section id="servicios">
-          <h2 class="animated-heading">Servicios</h2>
-          <ul>
-            <li>Diseño y Desarrollo Web</li>
-            <li>Analisis de datos</li>
-            <li>Diseño Gráfico sencillo</li>
-            <li>Escritor</li>
-          </ul>
-        </section>
-      
         <section id="contacto">
           <h2 class="animated-heading">Contacto</h2>
           <p><br>
             <a href="https://github.com/Sim-onion/Portfolio" target="_blank"><img src="imgs/github.png" alt="github">https://github.com/Sim-onion/Portfolio</a>
           </p>
+          
+
           <form id="formulario">
             <label for="nombre">Nombre:</label> <br>
             <input type="text" id="nombre" name="nombre" required /> <br>
@@ -79,7 +73,7 @@
             <textarea id="mensaje" name="mensaje" required></textarea><br>
       
             <input type="submit" value="Enviar" /> 
-
+            
           </form>
         </section>
       </main>
@@ -113,6 +107,7 @@
           alert("Formulario enviado correctamente");
           formulario.reset();
         }
+        header("Location: gracias.html");
         const form = document.querySelector('form');
         
         form.addEventListener('submit', event => {
